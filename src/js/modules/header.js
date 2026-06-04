@@ -34,7 +34,7 @@ function initNav() {
   const navButton = document.querySelector(".site__nav__togle");
   const navCloseBtn = document.querySelector(".site__nav__close");
   const navContent = document.querySelector(".site__nav__content");
-  const isDesktop = window.matchMedia("(min-width: 52em)");
+  // const isDesktop = window.matchMedia("(min-width: 52em)");
   const main = document.querySelector("main");
   const siblings = document.querySelectorAll(".wrapper > *:not(nav)");
 
@@ -48,6 +48,8 @@ function initNav() {
     },
     false
   );
+
+  navButton.addEventListener("click", showNavigationContent, false);
 
   function hideNav() {
     nav.classList.add("closed");
@@ -104,35 +106,35 @@ function initNav() {
     navCloseBtn.focus();
   }
 
-  const handleResize = e => {
-    if (e.matches) {
-      // is "desktop"
-      navContent.removeAttribute("hidden");
-      navButton.setAttribute("hidden", "");
-      navCloseBtn.setAttribute("hidden", "");
+  // const handleResize = e => {
+  //   if (e.matches) {
+  //     // is "desktop"
+  //     navContent.removeAttribute("hidden");
+  //     navButton.setAttribute("hidden", "");
+  //     navCloseBtn.setAttribute("hidden", "");
 
-      navContent.removeAttribute("role");
-      navContent.removeAttribute("aria-labelledby");
+  //     navContent.removeAttribute("role");
+  //     navContent.removeAttribute("aria-labelledby");
 
-      navCloseBtn.setAttribute("hidden", "");
-      removeNavInert();
-      removePageInert();
-    } else {
-      navButton.removeAttribute("hidden");
-      navCloseBtn.removeAttribute("hidden");
-      navContent.setAttribute("role", "dialog");
-      navContent.setAttribute("aria-labelledby", "site-nav-label");
+  //     navCloseBtn.setAttribute("hidden", "");
+  //     removeNavInert();
+  //     removePageInert();
+  //   } else {
+  //     navButton.removeAttribute("hidden");
+  //     navCloseBtn.removeAttribute("hidden");
+  //     navContent.setAttribute("role", "dialog");
+  //     navContent.setAttribute("aria-labelledby", "site-nav-label");
 
-      if (navIsShown) {
-        makeNavInert();
-      } else {
-        removeNavInert();
-      }
+  //     if (navIsShown) {
+  //       makeNavInert();
+  //     } else {
+  //       removeNavInert();
+  //     }
 
-      navButton.addEventListener("click", showNavigationContent, false);
-    }
-  };
+  //     navButton.addEventListener("click", showNavigationContent, false);
+  //   }
+  // };
 
-  isDesktop.addEventListener("change", e => handleResize(e));
-  handleResize(isDesktop);
+  // isDesktop.addEventListener("change", e => handleResize(e));
+  // handleResize(isDesktop);
 }
