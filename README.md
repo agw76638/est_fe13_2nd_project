@@ -61,7 +61,7 @@ src/
     ├── base/
     │   ├── variables.css    # 디자인 토큰 (색상, 간격 등)
     │   ├── reset.css        # 전역 기본 스타일
-    │   └── typography.css   # 타이포그래피 유틸리티 클래스
+    │   └── utilities.css    # 유틸리티 클래스
     ├── layout/
     ├── modules/
     └── pages/               # 페이지별 스타일
