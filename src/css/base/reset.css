@@ -11,6 +11,12 @@ h6 {
   text-wrap: balance;
 }
 
+p,
+li,
+figcaption {
+  max-width: 65ch;
+}
+
 img {
   max-width: 100%;
   height: auto;
