@@ -4,6 +4,24 @@
   align-items: center;
 }
 
+@media (min-width: 1200px) {
+  .hero {
+    padding-block: 28px;
+  }
+  .hero .wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .hero .wrapper > * {
+    flex: 1;
+  }
+
+  .hero__heading {
+    align-items: start;
+  }
+}
+
 .hero__swiper {
   width: 600px;
   height: 300px;
