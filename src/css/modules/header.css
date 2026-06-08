@@ -1,4 +1,8 @@
 .site__header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: var(--background);
   border-bottom: 1px solid var(--primary);
 }
 
@@ -11,6 +15,7 @@
 .site__nav__toggle,
 .site__nav__close {
   all: unset;
+  cursor: pointer;
 }
 
 .site__nav__toggle:focus-visible,
@@ -59,10 +64,12 @@
 }
 
 .cart__counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 14px;
   height: 14px;
   font-size: 10px;
-  text-align: center;
   background-color: var(--accent);
   border-radius: 50%;
 }
