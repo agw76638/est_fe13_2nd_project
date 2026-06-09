@@ -14,4 +14,10 @@ switch (page) {
     break;
   case "404":
     import("./pages/404.js");
+  case "login":
+    import("./pages/login.js");
+    break;
+  case "signup":
+    import("./pages/signup.js");
+    break;
 }
