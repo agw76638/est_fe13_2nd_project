@@ -15,10 +15,10 @@ export function renderHeader() {
         <a href="/est_fe13_2nd_project/" class="site__nav__logo text-headline-small" id="site-nav-label">ROUNZ</a>
         <ul class="site__nav__actions" role="list">
           <li>
-            <a href="#" aria-label="프로필"><i data-lucide="user-round"></i></a>
+            <a href="./login.html" aria-label="프로필"><i data-lucide="user-round"></i></a>
           </li>
           <li>
-            <a href="#" class="pile" aria-label="장바구니">
+            <a href="./cart.html" class="pile" aria-label="장바구니">
               <i data-lucide="shopping-cart"></i>
               <span class="cart__counter badge">1</span>
             </a>
@@ -26,6 +26,9 @@ export function renderHeader() {
         </ul>
         <div class="site__nav__content" inert>
           <button class="site__nav__close" aria-label="메뉴 닫기">닫기</button>
+
+          <a href="./login.html">로그인</a>
+          <a href="./signup.html">회원가입</a>
         </div>
       </nav>
     </div>
