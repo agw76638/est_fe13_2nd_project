@@ -42,6 +42,7 @@ function initNav() {
   const navContent = document.querySelector(".site__nav__content");
   // const isDesktop = window.matchMedia("(min-width: 52em)");
   const main = document.querySelector("main");
+  const footer = document.querySelector("footer");
   const siblings = document.querySelectorAll(".wrapper > *:not(nav)");
 
   navCloseBtn.addEventListener(
@@ -71,9 +72,9 @@ function initNav() {
     if (main) {
       main.setAttribute("inert", "");
     }
-    // if (footer) {
-    //   footer.setAttribute("inert", "");
-    // }
+    if (footer) {
+      footer.setAttribute("inert", "");
+    }
 
     for (let i = 0; i < siblings.length; i++) {
       siblings[i].setAttribute("inert", "true");
@@ -84,9 +85,9 @@ function initNav() {
     if (main) {
       main.removeAttribute("inert");
     }
-    // if (footer) {
-    // 	footer.removeAttribute("inert");
-    // }
+    if (footer) {
+      footer.removeAttribute("inert");
+    }
 
     for (let i = 0; i < siblings.length; i++) {
       siblings[i].removeAttribute("inert");
