@@ -7,17 +7,17 @@
     <title>페이지를 찾을 수 없습니다</title>
     <script type="module" src="./src/js/main.js"></script>
   </head>
-  <body>
-    <main class="error-container">
+  <body data-page="404">
+    <header class="site__header"></header>
+    <main class="error__page">
       <div class="wrapper">
-        <div class="error__code">404</div>
-        <h1 class="error__title">요청하신 페이지를 찾을 수 없습니다.</h1>
-        <p class="error__desc">
-          입력하신 주소가 잘못되었거나, 변경 혹은 삭제되어 요청하신 페이지로
-          이동할 수 없습니다.
-        </p>
-        <a href="/est_fe13_2nd_project/" class="home-btn">홈으로 돌아가기</a>
+        <h1 class="error__heading text-display-large">404</h1>
+        <div class="error__actions">
+          <a href="/est_fe13_2nd_project/">홈으로 가기</a>
+          <a href="#">상품 둘러보기</a>
+        </div>
       </div>
     </main>
+    <footer class="site__footer"></footer>
   </body>
 </html>

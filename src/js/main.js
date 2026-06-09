@@ -12,4 +12,6 @@ switch (page) {
   case "main":
     import("./pages/index.js");
     break;
+  case "404":
+    import("./pages/404.js");
 }
