@@ -28,7 +28,7 @@
 
 .site__nav__toggle:focus-visible,
 .site__nav__close:focus-visible {
-  outline: 4px solid black;
+  outline: 4px solid var(--primary);
   outline-offset: 2px;
 }
 

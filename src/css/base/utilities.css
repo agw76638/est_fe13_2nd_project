@@ -96,20 +96,12 @@
 
 .auto-grid {
   --min-col-size: 200px;
-  --min-col-count: 1;
   --gap-size: 1rem;
 
   display: grid;
   grid-template-columns: repeat(
       auto-fit,
-      minmax(
-        min(
-          var(--min-col-size),
-          (100% - (var(--min-col-count) - 1) * var(--gap-size)) /
-          var(--min-col-count)
-        ),
-        1fr
-      )
+      minmax(min(var(--min-col-size), 100%), 1fr)
     );
   gap: var(--gap-size);
 }
