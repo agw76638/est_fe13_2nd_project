@@ -45,11 +45,16 @@ body {
   object-fit: cover;
 }
 
+.info .tabs__container {
+  min-height: fit-content;
+}
+
 .info [role="tablist"] {
   display: flex;
   gap: 1rem;
   padding: 0;
   margin: 0;
+  margin-bottom: 1rem;
   list-style: none;
 }
 
