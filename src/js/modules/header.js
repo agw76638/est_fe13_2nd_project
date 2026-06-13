@@ -1,4 +1,4 @@
-import { createIcons, Menu, ShoppingCart, UserRound } from "lucide";
+import { createIcons, Menu, ShoppingCart, Sun, UserRound } from "lucide";
 import "../../css/modules/header.css";
 
 const siteHeader = document.querySelector(".site__header");
@@ -19,11 +19,11 @@ export function renderHeader() {
             <a href="/est_fe13_2nd_project/" class="site__nav__logo text-headline-small" id="site-nav-label">ROUNZ</a>
           </li>
         </ul>
-        <label for="theme" class="visually-hidden">테마 선택기</label>
+        <label for="theme" class="visually-hidden">화면 테마 변경</label>
         <select id="theme">
-          <option value="system" selected>시스템 모드</option>
-          <option value="light">라이트 모드</option>
-          <option value="dark">다크 모드</option>
+          <option value="system" aria-label="시스템 설정 모드" selected>⚙</option>
+          <option value="light" aria-label="라이트 모드">☀</option>
+          <option value="dark" aria-label="다크 모드">☾</option>
         </select>
         <ul class="site__nav__actions" role="list">
           <li>
@@ -42,7 +42,7 @@ export function renderHeader() {
       </nav>
     </div>
   `;
-  createIcons({ icons: { Menu, UserRound, ShoppingCart } });
+  createIcons({ icons: { Menu, UserRound, ShoppingCart, Sun } });
   initNav();
 }
 
