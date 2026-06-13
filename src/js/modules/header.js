@@ -6,13 +6,24 @@ export function renderHeader() {
   siteHeader.innerHTML = /* HTML */ `
     <div class="wrapper">
       <nav class="site__nav" aria-labelledby="site-nav-label">
-        <button
-          class="site__nav__toggle"
-          aria-expanded="false"
-          aria-label="메뉴 열기">
-          <i data-lucide="menu" aria-hidden="true"></i>
-        </button>
-        <a href="/est_fe13_2nd_project/" class="site__nav__logo text-headline-small" id="site-nav-label">ROUNZ</a>
+        <ul class="site__nav__main">
+          <li>
+            <button
+              class="site__nav__toggle"
+              aria-expanded="false"
+              aria-label="메뉴 열기">
+              <i data-lucide="menu" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li>
+            <a href="/est_fe13_2nd_project/" class="site__nav__logo text-headline-small" id="site-nav-label">ROUNZ</a>
+          </li>
+        </ul>
+        <select id="theme">
+          <option value="system" selected>시스템 모드</option>
+          <option value="light">라이트 모드</option>
+          <option value="dark">다크 모드</option>
+        </select>
         <ul class="site__nav__actions" role="list">
           <li>
             <a href="#" aria-label="프로필"><i data-lucide="user-round" aria-hidden="true"></i></a>

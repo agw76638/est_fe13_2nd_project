@@ -79,14 +79,44 @@
               </li>
             </ul>
             <div class="tabs__panels">
-              <div id="notice" role="tabpanel" aria-labelledby="tab-1">
-                <h3>Lorem, ipsum.</h3>
+              <div
+                id="notice"
+                class="tab__panel"
+                role="tabpanel"
+                aria-labelledby="tab-1"
+              >
+                <template id="main-notice-template">
+                  <div class="main__notice__container">
+                    <span class="tab__panel--notice__title"></span>
+                    <span class="tab__panel--notice__date"></span>
+                  </div>
+                </template>
               </div>
-              <div id="event" role="tabpanel" aria-labelledby="tab-2">
-                <h3>Lorem, ipsum dolor.</h3>
+              <div
+                id="event"
+                class="tab__panel"
+                role="tabpanel"
+                aria-labelledby="tab-2"
+              >
+                <template id="main-event-template">
+                  <details class="main__event__container">
+                    <summary class="tab__panel--event__title"></summary>
+                    <p></p>
+                  </details>
+                </template>
               </div>
-              <div id="faq" role="tabpanel" aria-labelledby="tab-3">
-                <h3>Lorem ipsum dolor sit.</h3>
+              <div
+                id="faq"
+                class="tab__panel"
+                role="tabpanel"
+                aria-labelledby="tab-3"
+              >
+                <template id="main-faq-template">
+                  <details class="main__faq__container">
+                    <summary class="tab__panel--faq__question"></summary>
+                    <p></p>
+                  </details>
+                </template>
               </div>
             </div>
           </div>
@@ -212,7 +242,7 @@
             <div class="main__review-card">
               <img
                 src="/images/avatars/review1.webp"
-                alt="프로필 이미지"
+                alt="clumsy7206 프로필 이미지"
                 loading="lazy"
               >
               <p>
@@ -223,12 +253,12 @@
                 케이스까지 예뻐서 선물받은 기분이었어요. 다음엔 선글라스도
                 여기서 맞춰볼 생각입니다!
               </p>
-              <p>- 이름</p>
+              <p>- clumsy7206</p>
             </div>
             <div class="main__review-card">
               <img
                 src="/images/avatars/review2.webp"
-                alt="프로필 이미지"
+                alt=" lushness2226프로필 이미지"
                 loading="lazy"
               >
               <p>
@@ -237,12 +267,12 @@
                 티타늄 프레임인데 착용감도 좋고 마감도 고급스럽습니다. 주변
                 친구들한테 이미 여러 명 추천했어요.
               </p>
-              <p>- 이름</p>
+              <p>- lushness2226</p>
             </div>
             <div class="main__review-card">
               <img
                 src="/images/avatars/review3.webp"
-                alt="프로필 이미지"
+                alt="sprung9113 프로필 이미지"
                 loading="lazy"
               >
               <p>
@@ -253,7 +283,7 @@
                 종일 편하게 쓸 수 있어요. 패키징도 감성적으로 잘 돼 있어서
                 언박싱할 때 기분이 좋았습니다. 매년 여기서 맞출 것 같아요
               </p>
-              <p>- 이름</p>
+              <p>- sprung9113</p>
             </div>
           </div>
         </div>
