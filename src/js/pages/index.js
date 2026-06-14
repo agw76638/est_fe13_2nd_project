@@ -48,8 +48,12 @@ function renderTabContent() {
   const eventItemContainer = document.querySelector("#event");
   const faqItemContainer = document.querySelector("#faq");
 
+  const skeletonGrid = document.querySelector(".skeleton-grid");
+  skeletonGrid.innerHTML = "";
+
   notices.forEach(notice => {
     const noticeItem = noticeItemTemplate.content.cloneNode(true);
+
     noticeItem.querySelector(".tab__panel--notice__title").textContent =
       notice.title;
     noticeItem.querySelector(".tab__panel--notice__date").textContent =
