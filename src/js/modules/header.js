@@ -5,14 +5,27 @@ const siteHeader = document.querySelector(".site__header");
 export function renderHeader() {
   siteHeader.innerHTML = /* HTML */ `
     <div class="wrapper">
+      <a href="#content" class="skip-link visually-hidden">컨텐츠로 바로가기</a>
       <nav class="site__nav" aria-labelledby="site-nav-label">
-        <button
-          class="site__nav__toggle"
-          aria-expanded="false"
-          aria-label="메뉴 열기">
-          <i data-lucide="menu" aria-hidden="true"></i>
-        </button>
-        <a href="/est_fe13_2nd_project/" class="site__nav__logo text-headline-small" id="site-nav-label">ROUNZ</a>
+        <ul class="site__nav__main">
+          <li>
+            <button
+              class="site__nav__toggle"
+              aria-expanded="false"
+              aria-label="메뉴 열기">
+              <i data-lucide="menu" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li>
+            <a href="/est_fe13_2nd_project/" class="site__nav__logo text-headline-small" id="site-nav-label">ROUNZ</a>
+          </li>
+        </ul>
+        <label for="theme" class="visually-hidden">화면 테마 변경</label>
+        <select id="theme">
+          <option value="system" aria-label="시스템 설정 모드" selected>⚙</option>
+          <option value="light" aria-label="라이트 모드">☀</option>
+          <option value="dark" aria-label="다크 모드">☾</option>
+        </select>
         <ul class="site__nav__actions" role="list">
           <li>
             <a href="#" aria-label="프로필"><i data-lucide="user-round" aria-hidden="true"></i></a>
