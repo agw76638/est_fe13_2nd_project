@@ -13,8 +13,8 @@
     <header class="site__header"></header>
     <main>
       <h1>장바구니</h1>
-      <div class="select_btn">
-        <button type="button" class="btn_select_all">
+      <div class="cart__controls">
+        <button type="button" class="cart__select-all-btn">
           <span>
             <svg
               aria-hidden="true"
@@ -33,7 +33,7 @@
             </svg>
           </span>전체 선택
         </button>
-        <button type="button" class="btn_select_delete">
+        <button type="button" class="cart__delete-btn">
           <span>
             <svg
               aria-hidden="true"
@@ -57,7 +57,7 @@
           </span>선택 삭제
         </button>
       </div>
-      <section class="incart_product">
+      <section class="cart__product">
         <h2>장바구니 상품</h2>
         <ul>
           <li>
@@ -79,16 +79,26 @@
               </svg> -->
               <input type="checkbox" name="" id="">
               <img src="images/3.webp" alt="">
-              <div class="product-info">
-                <p class="brand">브랜드</p>
+              <div class="cart__product-info">
+                <p class="cart__brand">브랜드</p>
 
                 <h3>상품 이름</h3>
 
-                <p class="price">₩000,000</p>
+                <p class="cart__price">₩000,000</p>
               </div>
-              <button type="button" class="btn_decrease_quantity">-</button>
-              <span class="quantity"> 1 </span>
-              <button type="button" class="btn_add_quantity">+</button>
+              <button
+                type="button"
+                class="cart__quantity-btn cart__quantity-btn--decrease"
+              >
+                -
+              </button>
+              <span class="cart__quantity"> 1 </span>
+              <button
+                type="button"
+                class="cart__quantity-btn cart__quantity-btn--increase"
+              >
+                +
+              </button>
             </article>
           </li>
         </ul>
@@ -100,14 +110,16 @@
         <p>배송비 : 0원</p>
         <strong>총 결제금액 : 999,999원</strong>
 
-        <button type="button" class="confirm_purchase">구매 결정</button>
+        <button type="button" class="cart-summary__purchase-btn">
+          구매 결정
+        </button>
       </aside>
 
-      <section class="recommend-card">
+      <section class="recommend">
         <h2>이런 상품은 어떠세요?</h2>
         <ul>
           <li>
-            <a href="#" class="recommend-item">
+            <a href="#" class="recommend__item">
               <img src="images/3.webp" alt="상품">
             </a>
           </li>

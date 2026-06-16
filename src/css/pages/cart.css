@@ -37,10 +37,10 @@ main {
 .incart_product ul li {
 }
 
-.btn_select_all,
-.btn_select_delete {
+.cart__select-all-btn,
+.cart__delete-btn {
   font-size: 14px;
 }
 
-.select_btn {
+.cart__controls {
 }
