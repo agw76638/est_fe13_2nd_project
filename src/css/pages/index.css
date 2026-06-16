@@ -101,6 +101,20 @@ body {
   --overflow-prevent: calc((100% - var(--gap-size)) / 2);
 }
 
+.main__featured .img-placeholder {
+  aspect-ratio: 1 / 1;
+}
+
+.main__featured-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main__featured-card-content > * {
+  margin: 0;
+}
+
 .main_featured-card img {
   aspect-ratio: 1 / 1;
 }

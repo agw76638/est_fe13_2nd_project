@@ -94,6 +94,9 @@ function renderFetured() {
 
   const featuredProducts = products.filter(p => p.featured);
 
+  featuredContainer.innerHTML = "";
+  const fragment = new DocumentFragment();
+
   featuredProducts.forEach(featuredProduct => {
     const featuredItem = featuredItemTemplate.content.cloneNode(true);
 
@@ -108,8 +111,10 @@ function renderFetured() {
     featuredItem.querySelector(".main__featured-price").textContent =
       `${featuredProduct.price}₩`;
 
-    featuredContainer.appendChild(featuredItem);
+    fragment.appendChild(featuredItem);
+    console.log(fragment.content);
   });
+  featuredContainer.innerHTML = fragment.content;
 }
 renderFetured();
 
