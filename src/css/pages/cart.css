@@ -26,5 +26,21 @@
   }
 }
 
+main {
+  padding-left: 38px;
+}
+
+.incart_product {
+  /* color: var(--background); */
+}
+
 .incart_product ul li {
+}
+
+.btn_select_all,
+.btn_select_delete {
+  font-size: 14px;
+}
+
+.select_btn {
 }
