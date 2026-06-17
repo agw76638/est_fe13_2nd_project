@@ -36,6 +36,12 @@ function renderHeader() {
         </ul>
         <div class="site__nav__content" inert>
           <button class="site__nav__close" aria-label="메뉴 닫기">닫기</button>
+          <ul role="list">
+            <li><a href="#">선글라스</a></li>
+            <li><a href="#">렌즈</a></li>
+            <li><a href="#">액세서리</a></li>
+            <li><a href="#">아이웨어</a></li>
+				  </ul>
         </div>
       </nav>
     </div>
