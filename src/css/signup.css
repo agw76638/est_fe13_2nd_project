@@ -1,3 +1,16 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+main {
+  flex: 1;
+}
+footer {
+  flex-shrink: 0;
+}
+
 .signup {
   display: flex;
   justify-content: center;
@@ -65,7 +78,7 @@
 .auth__social--naver {
   margin-bottom: 12px;
   color: #ffffff;
-  background-color: #03A94D;
+  background-color: #03a94d;
 }
 
 .auth__social--kakao {
