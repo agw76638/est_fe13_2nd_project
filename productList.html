@@ -71,6 +71,7 @@
           <div class="filter-group">
             <h4 class="filter-group__title">SEARCH</h4>
             <div class="search-input-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
               <input
                 type="text"
                 class="search-input"
@@ -82,9 +83,9 @@
           <!-- CATEGORY Section -->
           <div class="filter-group">
             <h4 class="filter-group__title">CATEGORY</h4>
-            <div class="filter-group__options">
+            <div id="category-filter" class="filter-group__options">
               <label class="custom-checkbox">
-                <input type="checkbox" checked>
+                <input type="checkbox" name="category" value="all" checked>
                 <svg
                   width="32"
                   height="32"
@@ -92,7 +93,6 @@
                   aria-hidden="true"
                   focusable="false"
                 >
-                  <!-- The background -->
                   <rect
                     class="checkbox__background"
                     width="35"
@@ -105,7 +105,6 @@
                     rx="6"
                     ry="6"
                   ></rect>
-                  <!-- The checkmark-->
                   <polyline
                     class="checkbox__checkmark"
                     points="4,14 12,23 28,5"
@@ -114,28 +113,111 @@
                     fill="none"
                   ></polyline>
                 </svg>
-
-                <span>텍스트</span>
+                <span>전체</span>
               </label>
             </div>
-          </div>
-
-          <!-- STYLE Section -->
-          <div class="filter-group">
-            <h4 class="filter-group__title">STYLE</h4>
-            <div class="filter-group__options"></div>
-          </div>
-
-          <!-- COLOR Section -->
-          <div class="filter-group">
+            <h4 class="filter-group__title">BRAND</h4>
+            <div id="brand-filter" class="filter-group__options">
+              <label class="custom-checkbox">
+                <input type="checkbox" name="category" value="all" checked>
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="-4 -4 39 39"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <rect
+                    class="checkbox__background"
+                    width="35"
+                    height="35"
+                    x="-2"
+                    y="-2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-width="3"
+                    rx="6"
+                    ry="6"
+                  ></rect>
+                  <polyline
+                    class="checkbox__checkmark"
+                    points="4,14 12,23 28,5"
+                    stroke="transparent"
+                    stroke-width="4"
+                    fill="none"
+                  ></polyline>
+                </svg>
+                <span>전체</span>
+              </label>
+            </div>
             <h4 class="filter-group__title">COLOR</h4>
-            <div class="filter-group__options"></div>
-          </div>
-
-          <!-- PRICE RANGE Section -->
-          <div class="filter-group">
+            <div id="color-filter" class="filter-group__options">
+              <label class="custom-checkbox">
+                <input type="checkbox" name="category" value="all" checked>
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="-4 -4 39 39"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <rect
+                    class="checkbox__background"
+                    width="35"
+                    height="35"
+                    x="-2"
+                    y="-2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-width="3"
+                    rx="6"
+                    ry="6"
+                  ></rect>
+                  <polyline
+                    class="checkbox__checkmark"
+                    points="4,14 12,23 28,5"
+                    stroke="transparent"
+                    stroke-width="4"
+                    fill="none"
+                  ></polyline>
+                </svg>
+                <span>전체</span>
+              </label>
+            </div>
             <h4 class="filter-group__title">PRICE RANGE</h4>
-            <div class="filter-group__options"></div>
+            <div id="Price-filter" class="filter-group__options">
+              <label class="custom-checkbox">
+                <input type="checkbox" name="category" value="all" checked>
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="-4 -4 39 39"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <rect
+                    class="checkbox__background"
+                    width="35"
+                    height="35"
+                    x="-2"
+                    y="-2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-width="3"
+                    rx="6"
+                    ry="6"
+                  ></rect>
+                  <polyline
+                    class="checkbox__checkmark"
+                    points="4,14 12,23 28,5"
+                    stroke="transparent"
+                    stroke-width="4"
+                    fill="none"
+                  ></polyline>
+                </svg>
+                <span>전체</span>
+              </label>
+            </div>
           </div>
         </div>
       </div>

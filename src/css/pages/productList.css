@@ -58,9 +58,9 @@
 }
 
 /* 480px 이상: 2열 */
-@media (min-width: 481px) {
+@media (min-width: 480px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 20px;
   }
 }
@@ -73,10 +73,10 @@
   }
 }
 
-/* 1200px 이상: 3열 */
+/* 1200px 이상: 2열 */
 @media (min-width: 1200px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 32px;
   }
 }
@@ -430,38 +430,49 @@
 
 /* Search input style matching modern UI */
 .search-input-wrapper {
-  position: relative;
+  box-sizing: border-box;
   display: flex;
+  gap: 12px;
   align-items: center;
   width: 100%;
+  padding: 6px;
+  background-color: var(--surface-container-lowest);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .search-icon {
-  position: absolute;
-  left: 14px;
-  color: var(--outline-variant);
-  pointer-events: none;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: #a1a0a9;
   transition: color 0.2s ease;
 }
 
 .search-input {
   width: 100%;
-  padding: 14px 16px 14px 44px;
+  padding: 0;
+  margin: 0;
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--on-background);
-  background-color: var(--surface-container-lowest);
-  border: 1px solid var(--outline-variant);
-  border-radius: 12px;
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    background-color 0.2s ease;
+  background: transparent;
+  border: none;
+}
+
+.search-input::placeholder {
+  color: #a1a0a9;
+  opacity: 1;
 }
 
 .search-input:focus {
   outline: none;
-  background-color: var(--surface-container-lowest);
+}
+
+.search-input-wrapper:focus-within {
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(33, 39, 92, 0.12);
 }
@@ -519,4 +530,45 @@
 .filter-option.custom-checkbox:hover span {
   color: var(--primary);
   opacity: 1;
+}
+
+/* 1200px 이상: 반응형 데스크톱 레이아웃 (좌측 필터창 고정, 우측 2열 상품 그리드) */
+@media (min-width: 1200px) {
+  #content {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    row-gap: 28px;
+    column-gap: 40px;
+  }
+
+  .product-intro {
+    grid-column: 1 / -1;
+  }
+
+  .filter-button {
+    display: none;
+  }
+
+  .filter-panel,
+  .filter-panel.hidden {
+    display: flex;
+    grid-column: 1;
+    margin-bottom: 0;
+  }
+
+  .filter-panel__header {
+    display: none;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: 2;
+    gap: 32px;
+    margin-bottom: 0;
+  }
+
+  .pagination {
+    grid-column: 2;
+    margin: 40px 0 24px 0;
+  }
 }
