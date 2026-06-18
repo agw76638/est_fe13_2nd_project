@@ -111,8 +111,10 @@ function createContent(data) {
   style.textContent = getProductStyle(data);
 
   // 소재
-  const material = document.querySelector(".product-material");
-  material.textContent = getProductMaterial(data);
+  const materials = document.querySelectorAll(".product-material");
+  materials.forEach(m => {
+    m.textContent = getProductMaterial(data);
+  });
 }
 
 function renderStars(starContainer, score) {
