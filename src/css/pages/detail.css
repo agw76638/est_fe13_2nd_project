@@ -150,7 +150,7 @@ a {
   filter: brightness(85%);
 }
 
-.quantity-control div {
+#quantity {
   width: 100px;
   height: 50px;
   line-height: 50px;
