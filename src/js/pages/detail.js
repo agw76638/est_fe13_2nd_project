@@ -1,5 +1,6 @@
 import "modern-normalize";
 import "../../css/style.css";
+import productData from "../../../data/products.json";
 
 import "../modules/header.js";
 import "../modules/footer.js";
@@ -12,10 +13,109 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "../../css/pages/detail.css";
 
-const tabs = document.querySelectorAll(".tabs a");
-const detailContents = document.querySelectorAll(".detail-content");
+import { addToCart } from "../utils/common.js";
+
+let product = {};
+
+//URLSearchParams mdn
+//url 생성자에 전달된 주소를 url.search를 통해 params라는 변수로 검색
+function fetchProduct() {
+  const params = new URLSearchParams(location.search);
+  const productID = params.get("id");
+  if (!productID) {
+    alert("잘못된 접근입니다. 홈으로 이동하겠습니다.");
+    location.href = "./index.html";
+  }
+  try {
+    product = productData.products.find(p => p.id === Number(productID));
+    console.log(product);
+    createContent(product);
+    createRecommendLists(data.products, product.category);
+  } catch (e) {
+    console.log(e);
+  } finally {
+    console.log("조회를 종료했습니다.");
+  }
+}
+fetchProduct();
+
+function createContent(data) {
+  const title = document.querySelector("#product-title"),
+    category = document.querySelectorAll(".product-category"),
+    origin_price = document.querySelector(".product-price"),
+    discount_badge = document.querySelector(".discount-badge"),
+    mainImage = document.querySelector(".main-image img"),
+    thumbnailImages = document.querySelectorAll(".product-thumbnails img"),
+    brand = document.querySelectorAll(".product-brand"),
+    rating = document.querySelectorAll(".rating-score"),
+    color = document.querySelector(".product-color");
+
+  title.textContent = data.title;
+
+  //카테고리별 구현 및 이동
+  const categoryActions = {
+    sunglasses: "showSunglasses",
+    lens: "showLens",
+    accessory: "showAccessory",
+    eyewear: "showEyewear",
+  };
+  category.forEach(c => {
+    c.textContent = data.category;
+    const action = categoryActions[data.category];
+    if (action) {
+      c.href = `./productList.html?action=${action}`;
+    }
+  });
+
+  if (data.sale_rate === 0) {
+    origin_price.textContent = `${data.price.toLocaleString()}원`;
+    discount_badge.style.visibility = "hidden";
+  } else {
+    const sale_price = data.price / ((100 - data.sale_rate) / 100);
+    origin_price.textContent = `${Math.round(sale_price).toLocaleString()}원`;
+    discount_badge.textContent = data.sale_rate;
+  }
+
+  mainImage.setAttribute("src", data.thumbnail);
+  thumbnailImages[0].setAttribute("src", data.thumbnailMin);
+
+  brand.forEach(b => {
+    b.textContent = data.brand;
+  });
+
+  rating.forEach(r => {
+    r.textContent = Number(data.rating).toFixed(1);
+  });
+
+  //별점
+  const productStars = document.querySelector(".product-rating");
+  const tabStars = document.querySelector(".review-score");
+  renderStars(productStars, Number(data.rating));
+  renderStars(tabStars, Number(data.rating));
+
+  color.textContent = data.color;
+}
+
+function renderStars(starContainer, score) {
+  const starIcons = starContainer.querySelectorAll(".stars .material-icons");
+  const roundedScore = Math.round(score * 2) / 2;
+
+  starIcons.forEach((star, index) => {
+    const starNumber = index + 1;
+
+    if (roundedScore >= starNumber) {
+      star.textContent = "star";
+    } else if (roundedScore >= starNumber - 0.5) {
+      star.textContent = "star_half";
+    } else {
+      star.textContent = "star_border";
+    }
+  });
+}
 
 // 상품 정보 탭 구현
+const tabs = document.querySelectorAll(".tabs a");
+const detailContents = document.querySelectorAll(".detail-content");
 tabs.forEach(t => {
   t.addEventListener("click", e => {
     e.preventDefault();
@@ -65,8 +165,9 @@ thumbnails.forEach((thumbnail, index) => {
 });
 
 // 좋아요 버튼
-const favorite = document.querySelector(".product-brand a span");
-favorite.addEventListener("click", () => {
+const favorite = document.querySelector(".product-brand-like a span");
+favorite.addEventListener("click", e => {
+  e.preventDefault();
   favorite.classList.toggle("active");
   if (favorite.classList.contains("active")) {
     favorite.textContent = "favorite";
@@ -121,5 +222,10 @@ buyNow.addEventListener("click", e => {
 });
 const share = document.querySelector(".share");
 share.addEventListener("click", e => {
+  e.preventDefault();
+});
+
+const lastCategory = document.querySelector(".detail_category .product-brand");
+lastCategory.addEventListener("click", e => {
   e.preventDefault();
 });
