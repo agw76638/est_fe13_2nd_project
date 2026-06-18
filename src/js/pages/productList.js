@@ -35,7 +35,7 @@ const STAR_EMPTY = `<svg class="product-card__star product-card__star--empty" ar
 
 async function fetchProducts() {
   try {
-    const res = await fetch("./data/products.json");
+    const res = await fetch("/est_fe13_2nd_project/data/products.json");
     const data = await res.json();
     products = data.products;
     filteredData = products;

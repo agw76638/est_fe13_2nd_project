@@ -21,7 +21,7 @@ export function getCartCount() {
 
 //헤더 상단 장바구니 개수 출력
 export function updateCartCount() {
-  const cartCount = document.querySelector(".cart-count");
+  const cartCount = document.querySelector(".cart__counter");
   if (!cartCount) return;
   cartCount.textContent = getCartCount();
 }
