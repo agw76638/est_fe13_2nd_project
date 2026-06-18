@@ -18,16 +18,16 @@
       <section class="wrapper detail_category text-title-small">
         <a href="./index.html">Home</a>
         <p>></p>
-        <a href="#">선글라스</a>
+        <a href="#" class="product-category">선글라스</a>
         <p>></p>
-        <a href="#">Ray-Ban</a>
+        <a href="#" class="product-brand">Ray-Ban</a>
       </section>
       <section class="wrapper detail_product">
         <div class="detail_product_left">
           <div class="product-main-image swiper">
             <span class="discount-badge text-title-medium">-17%</span>
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
+              <div class="main-image swiper-slide">
                 <img src="public/images/2.webp" alt="상품 이름">
               </div>
               <div class="swiper-slide">
@@ -52,24 +52,24 @@
 
         <div class="detail_product_right">
           <div class="product-info">
-            <div class="product-brand text-title-small">
-              <span>RAY-BAN</span>
+            <div class="product-brand-like text-title-small">
+              <span class="product-brand">RAY-BAN</span>
               <a href="#"
                 ><span class="material-icons">favorite_border</span></a
               >
             </div>
 
-            <h1 class="product-title text-display-small">
+            <h1 class="product-title text-display-small" id="product-title">
               레이밴 선글라스 클럽마스터
             </h1>
 
             <div class="product-rating text-body-large">
-              <div class="stars" aria-label="4.8점">
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
+              <div class="stars">
+                <span class="material-icons"></span>
+                <span class="material-icons"></span>
+                <span class="material-icons"></span>
+                <span class="material-icons"></span>
+                <span class="material-icons"></span>
               </div>
               <span class="rating-score">5.0</span>
               <span class="rating-count">3개의 후기</span>
@@ -84,21 +84,21 @@
               <div class="meta-row">
                 <ul class="meta-item">
                   <li>CATEGORY</li>
-                  <li>Sunglasses</li>
+                  <li class="product-category">Sunglasses</li>
                 </ul>
                 <ul class="meta-item">
                   <li>STYLE</li>
-                  <li>Aviator</li>
+                  <li class="product-style">Aviator</li>
                 </ul>
               </div>
               <div class="meta-row">
                 <ul class="meta-item">
                   <li>COLOR</li>
-                  <li>Black</li>
+                  <li class="product-color">Black</li>
                 </ul>
                 <ul class="meta-item">
                   <li>MATERIAL</li>
-                  <li>Metal</li>
+                  <li class="product-material">Metal</li>
                 </ul>
               </div>
             </div>
@@ -107,21 +107,33 @@
               <label class="text-title-medium">Quantity</label>
               <div class="quantity-control">
                 <button type="button" aria-label="수량 줄이기">-</button>
-                <input id="quantity" type="text" value="1" aria-label="수량">
+                <input
+                  id="quantity"
+                  type="text"
+                  value="1"
+                  aria-label="수량"
+                  readonly
+                >
                 <button type="button" aria-label="수량 늘리기">+</button>
               </div>
             </div>
           </div>
 
-          <div class="product-actions">
-            <a href="#" class="add-cart"
-              ><span class="material-icons"> shopping_cart </span>장바구니 추가</a
-            >
-            <a href="#" class="buy-now">즉시 구매</a>
-            <a href="#" class="share"
-              ><span class="material-icons">share</span>공유</a
-            >
-          </div>
+          <form class="product-form">
+            <div class="product-actions">
+              <button type="button" class="add-cart">
+                <span class="material-icons">shopping_cart</span>
+                장바구니 추가
+              </button>
+
+              <button type="submit" class="buy-now">즉시 구매</button>
+
+              <button type="button" class="share">
+                <span class="material-icons">share</span>
+                공유
+              </button>
+            </div>
+          </form>
         </div>
       </section>
 
@@ -160,8 +172,7 @@
                   <span class="material-icons">check</span>코받침 조절 가능
                 </li>
                 <li>
-                  <span class="material-icons">check</span>레이밴 정품 케이스
-                  포함
+                  <span class="material-icons">check</span>정품 케이스 포함
                 </li>
               </ul>
               <ul class="feature-list">
@@ -200,7 +211,7 @@
                 <dt>다리 길이</dt>
                 <dd class="text-body-large">145mm</dd>
                 <dt>프레임 소재</dt>
-                <dd class="text-body-large">메탈</dd>
+                <dd class="text-body-large product-material">메탈</dd>
               </dl>
             </div>
           </div>
@@ -213,8 +224,14 @@
 
             <div class="review-count">
               <div class="review-score">
-                <span class="material-icons">star star star star star</span>
-                <strong class="text-title-large">5.0</strong>
+                <div class="stars">
+                  <span class="material-icons"></span>
+                  <span class="material-icons"></span>
+                  <span class="material-icons"></span>
+                  <span class="material-icons"></span>
+                  <span class="material-icons"></span>
+                </div>
+                <strong class="rating-score text-title-large">5.0</strong>
               </div>
               <p class="text-body-large">총 3개의 후기</p>
             </div>
@@ -312,7 +329,7 @@
               </article>
               <article class="qna-item">
                 <div class="qna-item-header">
-                  <h3 class="text-title-medium">레이밴 케이스 포함 여부</h3>
+                  <h3 class="text-title-medium">케이스 포함 여부</h3>
                   <p class="text-body-medium">Jihun P. | 2026.06.07</p>
                 </div>
 
@@ -324,8 +341,8 @@
                 <div class="qna-answer text-body-large">
                   <span class="material-icons">subdirectory_arrow_right</span>
                   <p>
-                    네. 해당 상품에는 레이밴 정품 케이스와 클리닝 천이 함께
-                    포함되어 있습니다.
+                    네. 해당 상품에는 정품 케이스와 클리닝 천이 함께 포함되어
+                    있습니다.
                   </p>
                 </div>
               </article>
@@ -486,7 +503,7 @@
               <li>렌즈 옵션을 추가한 상품은 교환/환불이 불가합니다.</li>
             </ul>
 
-            <h4 class="text-title-medium">교환/반품 접수</h4>
+            <h3 class="text-title-medium">교환/반품 접수</h3>
             <ul class="order-list text-body-large">
               <li>
                 ROUNZ.COM 마이페이지 → 주문내역 하단의 교환신청/반품신청을
