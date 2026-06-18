@@ -210,26 +210,33 @@ quantity_control.addEventListener("click", e => {
 
 // 장바구니 추가 버튼
 // 현재 수량을 addToCart 함수에 인수를 넣어 실행
+const productForm = document.querySelector(".product-form");
 const addcart = document.querySelector(".add-cart");
-addcart.addEventListener("click", e => {
-  e.preventDefault();
+const share = document.querySelector(".share");
+addcart.addEventListener("click", () => {
   addToCart(product, Number(quantity.value));
 });
-// 즉시구매 버튼
+
+// 즉시 구매 버튼
 // 현재 수량을 addToCart 함수에 인수를 넣어 실행 및 cart.html로 이동
-const buyNow = document.querySelector(".buy-now");
-buyNow.addEventListener("click", e => {
+productForm.addEventListener("submit", e => {
   e.preventDefault();
 
   // 현재 상품과 수량을 장바구니에 추가
   addToCart(product, Number(quantity.value));
-
   // 장바구니 페이지로 이동
   location.href = "./cart.html";
 });
-const share = document.querySelector(".share");
-share.addEventListener("click", e => {
-  e.preventDefault();
+
+// 공유 버튼 : 클릭시 사이트 url 복사
+share.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(location.href);
+    alert("페이지 주소가 복사되었습니다.");
+  } catch (error) {
+    console.error(error);
+    alert("주소 복사에 실패했습니다.");
+  }
 });
 
 const lastCategory = document.querySelector(".detail_category .product-brand");
