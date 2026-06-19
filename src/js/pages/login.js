@@ -1,9 +1,8 @@
-import '../modules/header.js';
+import "../modules/header.js";
 
-renderHeader();
 const form = document.querySelector(".login-form");
 
-form?.addEventListener("submit", (event) => {
+form?.addEventListener("submit", event => {
   event.preventDefault();
 
   const email = document.querySelector("#email").value.trim();
@@ -16,3 +15,5 @@ form?.addEventListener("submit", (event) => {
 
   alert("로그인되었습니다.");
 });
+
+import "../modules/footer.js";
