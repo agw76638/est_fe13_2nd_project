@@ -1,5 +1,6 @@
 const siteHeader = document.querySelector(".site__header");
-function renderHeader() {
+export function renderHeader() {
+ 
   siteHeader.innerHTML = /* HTML */ `
     <div class="wrapper">
       <a href="#content" class="skip-link visually-hidden">컨텐츠로 바로가기</a>
@@ -14,7 +15,7 @@ function renderHeader() {
             </button>
           </li>
           <li>
-            <a href="/est_fe13_2nd_project/" class="site__nav__logo text-headline-small" id="site-nav-label">ROUNZ</a>
+            <a href="./est_fe13_2nd_project/" class="site__nav__logo text-headline-small" id="site-nav-label">ROUNZ</a>
           </li>
         </ul>
         <label for="theme" class="visually-hidden">화면 테마 변경</label>
@@ -25,7 +26,7 @@ function renderHeader() {
         </select>
         <ul class="site__nav__actions" role="list">
           <li>
-            <a href="#"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-icon lucide-user-round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg><span class="visually-hidden">프로필</span></a>
+            <a href="./login.html"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-icon lucide-user-round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg><span class="visually-hidden">프로필</span></a>
           </li>
           <li>
             <a href="#" class="pile">
@@ -44,9 +45,8 @@ function renderHeader() {
     </div>
   `;
 }
-renderHeader();
-initNav();
-function initNav() {
+
+export function initNav() {
   const nav = document.querySelector(".site__nav");
   // nav.classList.add("enhanced");
   const navButton = document.querySelector(".site__nav__toggle");

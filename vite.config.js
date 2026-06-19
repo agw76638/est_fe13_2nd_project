@@ -11,6 +11,8 @@ export default defineConfig({
         notFound: resolve(__dirname, "404.html"),
         productList: resolve(__dirname, "productList.html"),
         detail: resolve(__dirname, "detail.html"),
+        login: resolve(__dirname, "login.html"),
+        signup: resolve(__dirname, "signup.html"),
       },
     },
   },
