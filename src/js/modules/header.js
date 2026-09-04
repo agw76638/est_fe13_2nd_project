@@ -1,6 +1,5 @@
 const siteHeader = document.querySelector(".site__header");
-export function renderHeader() {
- 
+function renderHeader() {
   siteHeader.innerHTML = /* HTML */ `
     <div class="wrapper">
       <a href="#content" class="skip-link visually-hidden">컨텐츠로 바로가기</a>
@@ -15,7 +14,7 @@ export function renderHeader() {
             </button>
           </li>
           <li>
-            <a href="./est_fe13_2nd_project/" class="site__nav__logo text-headline-small" id="site-nav-label">ROUNZ</a>
+            <a href="/est_fe13_2nd_project/" class="site__nav__logo text-headline-small" id="site-nav-label">ROUNZ</a>
           </li>
         </ul>
         <label for="theme" class="visually-hidden">화면 테마 변경</label>
@@ -56,7 +55,8 @@ export function renderHeader() {
   `;
 }
 
-export function initNav() {
+renderHeader();
+function initNav() {
   const nav = document.querySelector(".site__nav");
   // nav.classList.add("enhanced");
   const navButton = document.querySelector(".site__nav__toggle");
@@ -156,6 +156,8 @@ export function initNav() {
     navCloseBtn.focus();
   }
 }
+
+initNav();
 
 function restoreColorSchemePreference() {
   const colorScheme = localStorage.getItem(colorSchemeStorageItemName);
